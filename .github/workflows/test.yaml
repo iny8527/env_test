@@ -1,4 +1,4 @@
-name: Env based vars/secrets
+name: Env based vars/secrets selection
 
 on:
   workflow_dispatch:
@@ -24,6 +24,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        
+      - name: Print selected environment
+        run: |
+          echo "Selected environment is: ${{ inputs.env }}"
 
       - name: Print environment variable
         run: |
