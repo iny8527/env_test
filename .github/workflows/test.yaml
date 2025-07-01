@@ -1,0 +1,35 @@
+name: AI Gateway Performance Suite Tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        type: choice
+        description: Select Environment
+        required: true
+        options:
+          - dev
+          - test
+          - stage
+          - prod
+
+  push:
+    branches:
+      - main
+
+jobs:
+  performance-suite:
+    name: Run AI Gateway Performance Suite
+    runs-on: [kubernetes]
+
+    env:
+      ENV: ${{ github.event.inputs.env || 'dev' }}
+      SECRET1: ${{ secrets.SECRET1_DEV }}
+      
+
+    steps:
+      - name: Set kubeconfig path
+        if: env.ENV == 'dev'
+        run: echo SECRET1_DEV
+
+      
