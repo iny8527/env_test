@@ -27,7 +27,7 @@ jobs:
 
       - name: Print environment variable
         run: |
-          echo "SECRET2 is: $SECRET2"
+          echo "VAR2 is: $VAR2"
       
 
       
