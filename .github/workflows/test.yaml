@@ -28,7 +28,7 @@ jobs:
       
 
     steps:
-      - name: Set kubeconfig path
+      - name: test secrets
         if: env.ENV == 'dev'
         run: echo SECRET1_DEV
 
