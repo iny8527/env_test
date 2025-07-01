@@ -27,7 +27,7 @@ jobs:
 
       - name: Print environment variable
         run: |
-          echo "VAR2 is: $VAR2"
+          echo "VAR2 is:  ${{ vars.VAR2 }}"
       
 
       
