@@ -15,18 +15,22 @@ on:
 
 
 jobs:
-  performance-suite:
-    name: Run AI Gateway Performance Suite
-    runs-on: [kubernetes]
+  show-secrets:
+    runs-on: ubuntu-latest
 
-    env:
-      ENV: ${{ github.event.inputs.env || 'dev' }}
-      SECRET1: ${{ secrets.SECRET1 }}
-      
+    # Use the selected environment to bind secrets
+    environment: ${{ inputs.env }}
 
     steps:
-      - name: test secrets
-        if: env.ENV == 'dev'
-        run: echo SECRET1_DEV
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Print environment info
+        run: |
+          echo "Running in environment: ${{ inputs.env }}"
+
+      - name: Show secrets (demo only)
+        run: |
+          echo "secret1: ${{ secrets.SECRET1 }}"
+      
 
       
