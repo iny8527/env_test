@@ -1,4 +1,4 @@
-name: AI Gateway Performance Suite Tests
+name: Env based vars/secrets
 
 on:
   workflow_dispatch:
