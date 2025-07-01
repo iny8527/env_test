@@ -13,9 +13,6 @@ on:
           - stage
           - prod
 
-  push:
-    branches:
-      - main
 
 jobs:
   performance-suite:
