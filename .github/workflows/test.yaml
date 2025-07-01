@@ -21,7 +21,7 @@ jobs:
 
     env:
       ENV: ${{ github.event.inputs.env || 'dev' }}
-      SECRET1: ${{ secrets.SECRET1_DEV }}
+      SECRET1: ${{ secrets.SECRET1 }}
       
 
     steps:
