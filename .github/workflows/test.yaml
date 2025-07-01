@@ -30,7 +30,7 @@ jobs:
 
       - name: Show envv var (demo only)
         run: |
-          echo "secret2: ${{ secrets.SECRET2 }}"
+          echo "secret2: $SECRET2"
       
 
       
