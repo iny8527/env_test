@@ -28,9 +28,9 @@ jobs:
         run: |
           echo "Running in environment: ${{ inputs.env }}"
 
-      - name: Show secrets (demo only)
+      - name: Show envv var (demo only)
         run: |
-          echo "secret1: ${{ secrets.SECRET1 }}"
+          echo "secret2: ${{ secrets.SECRET2 }}"
       
 
       
